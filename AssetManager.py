@@ -33,7 +33,8 @@ class AssetManager:
       self.__instance.MenuStartHighlight = pyglet.resource.image("Assets/MainMenu/MainMenuStartHighlight.png")
       self.__instance.MenuQuitHighlight = pyglet.resource.image("Assets/MainMenu/MainMenuQuitHighlight.png")
       self.__instance.MenuSettingsHighlight = pyglet.resource.image("Assets/MainMenu/MainMenuSettingsHighlight.png")
-      
+      #background
+      self.__instance.Background = pyglet.image.load_animation("Assets/background.gif")
 
       ########## TILE SET Grass ###################
       self.__instance.TileGrassDown = pyglet.resource.image("Assets/Tileset1/TileGrassDown.png")
