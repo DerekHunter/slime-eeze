@@ -23,8 +23,6 @@ class Game:
   
   def onDraw(self):
     self.ScreenManager.onDraw()
-    pass
 
   def update(self, dt):
     self.ScreenManager.update(dt)
-    pass

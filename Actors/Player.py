@@ -31,11 +31,11 @@ class Player:
     self.MovingRight = True
   
   def StopMoveLeft(self):
-    print("MoveLeft")
+    print("StopMoveLeft")
     self.MovingLeft = False
 
   def StopMoveRight(self):
-    print("MoveRight")
+    print("StopMoveRight")
     self.MovingRight = False
   
   def update(self, dt):
@@ -54,3 +54,6 @@ class Player:
         self.y -= self.vSpeed
       if self.JumpTime >= 1:
         self.Jumping = False
+
+
+        d
