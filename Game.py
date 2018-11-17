@@ -1,4 +1,5 @@
 from ScreenManager import *
+from AssetManager import *
 
 class Game:
 
@@ -6,20 +7,22 @@ class Game:
     print("Creating Game")
     self.window = window
     self.ScreenManager = ScreenManager(window)
-    pass
+    self.ScreenManager.SetScreen("Menu")
 
   def KeyPress(self, key):
     print("Key Pressed: ", str(key))
-    pass
+    return self.ScreenManager.KeyPress(key)
+
+  def KeyUp(self, key):
+    print("Key Up: ", str(key))
+    return self.ScreenManager.KeyUp(key)
 
   def MouseClick(self, x, y, button):
     print("Mouse Click: ", str(button))
-    pass
+    self.ScreenManager.MouseClick(x,y,button)
   
   def onDraw(self):
     self.ScreenManager.onDraw()
-    pass
 
   def update(self, dt):
     self.ScreenManager.update(dt)
-    pass

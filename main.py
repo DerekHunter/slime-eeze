@@ -10,7 +10,11 @@ game = Game(window)
 
 @window.event
 def on_key_press(symbol, modifiers):
-    game.KeyPress(symbol)
+    return game.KeyPress(symbol)
+
+@window.event
+def on_key_release(symbol, modifiers):
+    return game.KeyUp(symbol)
 
 @window.event
 def on_mouse_press(x, y, button, modifiers):
