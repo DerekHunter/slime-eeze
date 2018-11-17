@@ -13,8 +13,11 @@ class Player:
     self.x = x
     self.y = y
 
-    self.hSpeed = 10
-    self.vSpeed = 10
+    self.hSpeed = 128
+    self.vSpeed = 256
+
+    self.currentAnimation = pyglet.sprite.Sprite(AssetManager.getInstance().playerIdle, batch=self.batch, group=self.group)
+    self.SetAnimationLocation()
 
   def Jump(self):
     print("Jumping")
@@ -22,6 +25,10 @@ class Player:
       self.Jumping = True
       self.JumpTime = 0
   
+  def SetAnimationLocation(self):
+    self.currentAnimation.x = self.x
+    self.currentAnimation.y = self.y
+
   def MoveLeft(self):
     print("MoveLeft")
     self.MovingLeft = True
@@ -48,12 +55,10 @@ class Player:
     if self.Jumping:
       print(self.y, self.JumpTime)
       self.JumpTime += dt
-      if self.JumpTime <= .5:
-        self.y += self.vSpeed
+      if self.JumpTime <= 1:
+        self.y += self.vSpeed*dt
       else:
-        self.y -= self.vSpeed
-      if self.JumpTime >= 1:
+        self.y -= self.vSpeed*dt
+      if self.JumpTime >= 2:
         self.Jumping = False
-
-
-        d
+    self.SetAnimationLocation()

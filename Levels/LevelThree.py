@@ -11,7 +11,7 @@ class LevelThree:
     self.label = pyglet.text.Label('Level Three',
                       font_name='Times New Roman',
                       font_size=36,
-                      x=window.width//2, y=window.height//2,
+                      x=window.width//2, y=window.height-36,
                       anchor_x='center', anchor_y='center')
   
   def KeyPress(self, key):
