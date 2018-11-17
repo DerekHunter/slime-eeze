@@ -11,7 +11,7 @@ class Game:
 
   def KeyPress(self, key):
     print("Key Pressed: ", str(key))
-    self.ScreenManager.KeyPress(key)
+    return self.ScreenManager.KeyPress(key)
 
   def MouseClick(self, x, y, button):
     print("Mouse Click: ", str(button))
