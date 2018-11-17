@@ -13,6 +13,10 @@ class Game:
     print("Key Pressed: ", str(key))
     return self.ScreenManager.KeyPress(key)
 
+  def KeyUp(self, key):
+    print("Key Up: ", str(key))
+    return self.ScreenManager.KeyUp(key)
+
   def MouseClick(self, x, y, button):
     print("Mouse Click: ", str(button))
     self.ScreenManager.MouseClick(x,y,button)

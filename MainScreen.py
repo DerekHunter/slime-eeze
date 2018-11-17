@@ -16,6 +16,9 @@ class MainScreen:
   def KeyPress(self, key):
     pass
 
+  def KeyUp(self, key):
+    pass
+
   def MouseClick(self, x, y, button):
     self.screenManager.SetScreen("LevelOne")
   

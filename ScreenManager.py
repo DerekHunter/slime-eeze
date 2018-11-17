@@ -43,8 +43,14 @@ class ScreenManager:
     else:
       self.currentScreen.KeyPress(key)
 
+  def KeyUp(self, key):
+    self.currentScreen.KeyUp(key)
+
   def MouseClick(self, x, y, button):
-    self.currentScreen.MouseClick(x, y, button)
+    if self.paused:
+      self.PauseScreen.MouseClick(x,y,button)
+    else:
+      self.currentScreen.MouseClick(x, y, button)
   
   def onDraw(self):
     if self.paused:
