@@ -16,6 +16,8 @@ class LevelOne:
     
     self.MoveLeft = False
     self.MoveRight = False
+    self.group = pyglet.graphics.OrderedGroup(3)
+    self.currentAnimation = pyglet.sprite.Sprite(AssetManager.getInstance().Background, batch=self.batch, group=self.group)
 
     self.tiles = []
 
@@ -47,24 +49,21 @@ class LevelOne:
     #Boulder will be at 29, 3, ontop of the second steps
 
 
-
+    # pre first hole
     for i in range(0,10):
       for j in range(0,29):
         if i == 9:
           self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().ground5))
         if i == 8:
           self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().grass2))
-
-
-
+    #between hole and bit
     for i in range(0,10):
       for j in range(31,35):
         if i == 9:
           self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().ground5))
         if i == 8:
           self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().grass2))
-
-
+   #post pit
     for i in range(0,10):
       for j in range(40,50):
         if i == 9:
