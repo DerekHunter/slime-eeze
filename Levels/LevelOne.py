@@ -18,14 +18,60 @@ class LevelOne:
     self.MoveRight = False
 
     self.tiles = []
-    self.tiles.append(Tile(self.batch, 3, 7, AssetManager.getInstance().grass2))
+
+    #this one can be the cage if we get it
+    self.tiles.append(Tile(self.batch, 10, 7, AssetManager.getInstance().ground5))
+
+    #steps
+    self.tiles.append(Tile(self.batch, 14, 6, AssetManager.getInstance().grassleft))
+    self.tiles.append(Tile(self.batch, 15, 5, AssetManager.getInstance().grassleft))
+    self.tiles.append(Tile(self.batch, 16, 4, AssetManager.getInstance().grassleft))
+    self.tiles.append(Tile(self.batch, 17, 4, AssetManager.getInstance().ground0))
+    self.tiles.append(Tile(self.batch, 18, 4, AssetManager.getInstance().grassright))
+    #tower
+    self.tiles.append(Tile(self.batch, 3, 7, AssetManager.getInstance().ground5))
+    self.tiles.append(Tile(self.batch, 4, 7, AssetManager.getInstance().ground5))
+    self.tiles.append(Tile(self.batch, 4, 6, AssetManager.getInstance().ground5))
+
+    #obstacle wall
+    self.tiles.append(Tile(self.batch, 20, 7, AssetManager.getInstance().ground5))
+    self.tiles.append(Tile(self.batch, 20, 6, AssetManager.getInstance().ground5))
+    self.tiles.append(Tile(self.batch, 20, 5, AssetManager.getInstance().ground5))
+
+    #second steps
+    self.tiles.append(Tile(self.batch, 25, 6, AssetManager.getInstance().grassleft))
+    self.tiles.append(Tile(self.batch, 26, 5, AssetManager.getInstance().grassleft))
+    self.tiles.append(Tile(self.batch, 27, 4, AssetManager.getInstance().grassleft))
+    self.tiles.append(Tile(self.batch, 28, 4, AssetManager.getInstance().ground0))
+    self.tiles.append(Tile(self.batch, 29, 4, AssetManager.getInstance().grassright))
+    #Boulder will be at 29, 3, ontop of the second steps
+
+
 
     for i in range(0,10):
-      for j in range(0,20):
+      for j in range(0,29):
         if i == 9:
           self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().ground5))
         if i == 8:
           self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().grass2))
+
+
+
+    for i in range(0,10):
+      for j in range(31,35):
+        if i == 9:
+          self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().ground5))
+        if i == 8:
+          self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().grass2))
+
+
+    for i in range(0,10):
+      for j in range(40,50):
+        if i == 9:
+          self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().ground5))
+        if i == 8:
+          self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().grass2))
+
 
     #Tower
   #  self.tiles.append(Tile(self.batch, 3, 7, AssetManager.getInstance().TileGrassTopLeft))

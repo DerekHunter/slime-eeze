@@ -62,3 +62,4 @@ class AssetManager:
       self.__instance.grassleft = pyglet.resource.image("Assets/Tileset3/grassleft.png")
       self.__instance.grassright = pyglet.resource.image("Assets/Tileset3/grassright.png")
       self.__instance.ground5 = pyglet.resource.image("Assets/Tileset3/ground5.png")
+      self.__instance.ground0 = pyglet.resource.image("Assets/Tileset3/grass\ top/ground0.png")
