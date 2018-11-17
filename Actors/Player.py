@@ -14,16 +14,15 @@ class Player:
     self.y = y
 
     self.hSpeed = 128
-    self.vSpeed = 256
+    self.gravity = 4
+    self.jumpPower = 45
+    self.vSpeed = 0
 
     self.currentAnimation = pyglet.sprite.Sprite(AssetManager.getInstance().playerIdle, batch=self.batch, group=self.group)
     self.SetAnimationLocation()
 
   def Jump(self):
-    print("Jumping")
-    if not self.Jumping:
-      self.Jumping = True
-      self.JumpTime = 0
+    self.vSpeed = self.jumpPower
   
   def SetAnimationLocation(self):
     self.currentAnimation.x = self.x
@@ -45,21 +44,18 @@ class Player:
     print("StopMoveRight")
     self.MovingRight = False
   
-  def update(self, dt):
-    if self.MovingRight:
-      self.x += self.hSpeed*dt
-      print(self.x)
-    if self.MovingLeft:
-      print(self.x)
-      self.x -= self.hSpeed*dt
-    if self.Jumping:
-      print(self.y, self.JumpTime)
-      self.JumpTime += dt
-      if self.JumpTime <= 1:
-        self.y += self.vSpeed*dt
-      else:
-        self.y -= self.vSpeed*dt
-      if self.JumpTime >= 2:
-        self.Jumping = False
-      
+  def update(self, dt, collidables, cameraOffset):
+    print("PLayer: ",self.x,self.y)
+
+    self.y += self.vSpeed
+    for collidable in collidables:
+      if self.x+64 >= collidable.x-cameraOffset:
+        if self.x+64 <= collidable.x+128 -cameraOffset:
+          if self.y <= collidable.y+128:
+            self.y = collidable.y+128
+            self.vSpeed = 0
+            break
+    self.vSpeed -= self.gravity
+    
+
     self.SetAnimationLocation()

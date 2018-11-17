@@ -8,9 +8,9 @@ class Tile:
     self.sprite = pyglet.sprite.Sprite(tileImg, batch=self.batch, group=self.group)
     self.sprite.x = x*128
     self.sprite.y = 1080-y*128
-    self.x = x
-    self.y = y
+    self.x = x*128
+    self.y = 1080-y*128
 
   def update(self, dt, cameraOffset):
-    self.sprite.x = self.x*128 - cameraOffset
+    self.sprite.x = self.x - cameraOffset
     pass

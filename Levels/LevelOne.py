@@ -9,7 +9,7 @@ class LevelOne:
     self.window = window
     self.batch = pyglet.graphics.Batch()
     self.screenManager = screenManager
-    self.player = Player(self.batch, 128, 128)
+    self.player = Player(self.batch, 128, 300)
     self.cameraOffset = 0
     
     self.hSpeed = 128
@@ -17,6 +17,7 @@ class LevelOne:
     self.MoveLeft = False
     self.MoveRight = False
 
+    
     self.tiles = []
 
     #this one can be the cage if we get it
@@ -78,27 +79,6 @@ class LevelOne:
   #  self.tiles.append(Tile(self.batch, 4, 7, AssetManager.getInstance().TileGrassRight))
   #  self.tiles.append(Tile(self.batch, 4, 6, AssetManager.getInstance().TileGrassTop))
 
-    # #Boulder
-    # self.levelData[7][12] = 4
-    # self.levelData[7][13] = 4
-    # self.levelData[6][12] = 4
-    # self.levelData[6][13] = 4
-
-    # #Slime
-    # self.levelData[7][8] = 2
-
-    # #Hole
-    # self.levelData[8][16] = 0
-    # self.levelData[8][17] = 0
-    # self.levelData[9][16] = 0
-    # self.levelData[9][17] = 0
-    
-    # #Finisher
-    # self.levelData[8][19] = 3
-
-    # for row in self.levelData:
-    #   print(row)
-
     self.label = pyglet.text.Label('Level One',
                           font_name='Times New Roman',
                           font_size=36,
@@ -140,12 +120,24 @@ class LevelOne:
   def update(self, dt):
     if self.MoveLeft:
       self.cameraOffset += self.hSpeed*dt
+      # for tile in self.tiles:
+      #   if self.player.y >= tile.y:
+      #     if self.player.y <= tile.y+128:
+      #       print("Found Collidable", tile.x-self.cameraOffset)
+      #       if self.player.x+128 >= tile.x-self.cameraOffset:
+      #         print("Collision")
+      #         self.player.x = tile.x
+      #         break
     if self.MoveRight:
       self.cameraOffset -= self.hSpeed*dt
-    if self.cameraOffset > 640:
+    if self.cameraOffset > 189273:
       self.cameraOffset = 640
     if self.cameraOffset < 0:
       self.cameraOffset = 0
+    
+    
+
+    
     for tile in self.tiles:
       tile.update(dt, self.cameraOffset)
-    self.player.update(dt)
+    self.player.update(dt, self.tiles, self.cameraOffset)
