@@ -4,7 +4,7 @@ from pyglet.window import mouse
 
 from Game import *
 
-window = pyglet.window.Window(1920, 1080, fullscreen=True)
+window = pyglet.window.Window(1920, 1080)
 
 game = Game(window)
 

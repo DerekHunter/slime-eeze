@@ -17,7 +17,7 @@ class AssetManager:
       AssetManager.__instance = self
 
       ########## Slimes  ###################
-      self.__instance.slimeSinging = pyglet.image.load_animation('Assets/Slime/SlimeSinging.gif')
+      self.__instance.slimeSinging = pyglet.image.load_animation('./Assets/Slime/SlimeSinging.gif')
       self.__instance.slimeHopping = pyglet.image.load_animation('Assets/Slime/Slime.gif')
       self.__instance.slimeSad = pyglet.image.load_animation('Assets/Slime/SlimeSad.gif')
       self.__instance.slimeThinking = pyglet.image.load_animation('Assets/Slime/SlimeThinking.gif')
@@ -45,3 +45,20 @@ class AssetManager:
       self.__instance.TileGrassTopLeft = pyglet.resource.image("Assets/Tileset1/TileGrassTopLeft.png")
       self.__instance.TileGrassTopRight = pyglet.resource.image("Assets/Tileset1/TileGrassTopRight.png")
       self.__instance.TileNoGrass = pyglet.resource.image("Assets/Tileset1/TileNoGrass.png")
+      ######### Actual tile set guys##############
+      self.__instance.grass1 = pyglet.resource.image("Assets/Tileset3/grass1.png")
+      self.__instance.grass2 = pyglet.resource.image("Assets/Tileset3/grass2.png")
+      self.__instance.grass3 = pyglet.resource.image("Assets/Tileset3/grass3.png")
+      self.__instance.grass4 = pyglet.resource.image("Assets/Tileset3/grass4.png")
+      self.__instance.grass5 = pyglet.resource.image("Assets/Tileset3/grass5.png")
+      self.__instance.grass6 = pyglet.resource.image("Assets/Tileset3/grass6.png")
+      self.__instance.grass7 = pyglet.resource.image("Assets/Tileset3/grass7.png")
+      self.__instance.grass8 = pyglet.resource.image("Assets/Tileset3/grass8.png")
+      self.__instance.grass9 = pyglet.resource.image("Assets/Tileset3/grass9.png")
+      self.__instance.grasscorner1 = pyglet.resource.image("Assets/Tileset3/grasscorner1.png")
+      self.__instance.grasscorner2 = pyglet.resource.image("Assets/Tileset3/grasscorner2.png")
+      self.__instance.grasscorner3 = pyglet.resource.image("Assets/Tileset3/grasscorner3.png")
+      self.__instance.grasscorner4 = pyglet.resource.image("Assets/Tileset3/grasscorner4.png")
+      self.__instance.grassleft = pyglet.resource.image("Assets/Tileset3/grassleft.png")
+      self.__instance.grassright = pyglet.resource.image("Assets/Tileset3/grassright.png")
+      self.__instance.ground5 = pyglet.resource.image("Assets/Tileset3/ground5.png")

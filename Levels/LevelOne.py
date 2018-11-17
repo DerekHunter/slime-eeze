@@ -18,14 +18,14 @@ class LevelOne:
     self.MoveRight = False
 
     self.tiles = []
-    self.tiles.append(Tile(self.batch, 3, 7, AssetManager.getInstance().gras2))
+    self.tiles.append(Tile(self.batch, 3, 7, AssetManager.getInstance().grass2))
 
     for i in range(0,10):
       for j in range(0,20):
         if i == 9:
           self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().ground5))
         if i == 8:
-          self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().gras2))
+          self.tiles.append(Tile(self.batch, j, i, AssetManager.getInstance().grass2))
 
     #Tower
   #  self.tiles.append(Tile(self.batch, 3, 7, AssetManager.getInstance().TileGrassTopLeft))
