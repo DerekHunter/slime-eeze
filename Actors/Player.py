@@ -61,4 +61,5 @@ class Player:
         self.y -= self.vSpeed*dt
       if self.JumpTime >= 2:
         self.Jumping = False
+      
     self.SetAnimationLocation()
