@@ -1,11 +1,13 @@
 import pyglet
 
+from random import randint
 from AssetManager import *
 
 class Slime:
 
   def __init__(self, batch, x, y):
-    self.group = pyglet.graphics.OrderedGroup(3)
+    print(x,y)
+    self.group = pyglet.graphics.OrderedGroup(5)
     self.batch = batch
     self.slimeSinging = AssetManager.getInstance().slimeSinging
     self.slimeHopping = AssetManager.getInstance().slimeHopping
@@ -13,10 +15,26 @@ class Slime:
     self.slimeThinking = AssetManager.getInstance().slimeThinking
     self.slimeLaughing = AssetManager.getInstance().slimeLaughing
     self.slimeIdle = AssetManager.getInstance().slimeIdle
-    
+    self.x = x
+    self.y = y
     self.currentAnimation = pyglet.sprite.Sprite(self.slimeIdle, batch=self.batch, group=self.group)
     self.state = "idle"
     self.moveSpeed = 10
+
+    if randint(0,6) == 0:
+      self.SetHopping()
+    if randint(0,6) == 1:
+      self.SetIdle()
+    if randint(0,6) == 2:
+      self.SetLaughing()
+    if randint(0,6) == 3:
+      self.SetSad()
+    if randint(0,6) == 4:
+      self.SetSinging()
+    if randint(0,6) == 5:
+      self.SetThinking()
+
+
 
   def ToggleAnimation(self):
     if self.state == "singing":
@@ -41,6 +59,8 @@ class Slime:
   def SetCurrentAnimation(self, image):
     self.currentAnimation.batch = None
     self.currentAnimation = pyglet.sprite.Sprite(image, batch=self.batch, group=self.group)
+    self.currentAnimation.x = self.x
+    self.currentAnimation.y = self.y
 
   def SetHopping(self):
     print("Setting Hopping")

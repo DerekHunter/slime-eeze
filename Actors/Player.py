@@ -18,7 +18,7 @@ class Player:
     self.jumpPower = 45
     self.vSpeed = 0
 
-    self.currentAnimation = pyglet.sprite.Sprite(AssetManager.getInstance().playerIdle, batch=self.batch, group=self.group)
+    self.currentAnimation = pyglet.sprite.Sprite(AssetManager.getInstance().slimeHopping, batch=self.batch, group=self.group)
     self.SetAnimationLocation()
 
   def Jump(self):

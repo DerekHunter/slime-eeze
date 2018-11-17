@@ -2,6 +2,8 @@ import pyglet
 from Actors.Slime import *
 from Actors.Player import *
 from Tiles.Tile import *
+
+from random import randint
 class LevelOne:
   
   def __init__(self, window, screenManager):
@@ -16,7 +18,7 @@ class LevelOne:
     
     self.MoveLeft = False
     self.MoveRight = False
-    self.group = pyglet.graphics.OrderedGroup(3)
+    self.group = pyglet.graphics.OrderedGroup(0)
     self.currentAnimation = pyglet.sprite.Sprite(AssetManager.getInstance().Background, batch=self.batch, group=self.group)
 
     
@@ -117,6 +119,7 @@ class LevelOne:
     self.batch.draw()
 
   def update(self, dt):
+    Slime(self.batch, randint(0,1920), randint(0,1080))
     if self.MoveLeft:
       self.cameraOffset += self.hSpeed*dt
       # for tile in self.tiles:

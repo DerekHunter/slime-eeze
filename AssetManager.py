@@ -25,7 +25,7 @@ class AssetManager:
       self.__instance.slimeIdle = pyglet.image.load_animation('Assets/Slime/SlimeIdle.gif')
 
       ########## Player ###################
-      self.__instance.playerIdle = pyglet.image.load_animation('Assets/Character/CharacterIdle.gif')
+      self.__instance.playerIdle = pyglet.image.load_animation('Assets/Character/CharacterWalkRight.gif')
       
       ########## Menu ###################
       self.__instance.MenuBackground = pyglet.image.load_animation("Assets/MainMenu/MainMenuBackGround.gif")
